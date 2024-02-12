@@ -3,9 +3,21 @@
 body{
     background: linear-gradient(45deg,pink,violet);
     width: 100vw;
-    height: 100vh;
+    height: 110vh;
     margin: 0px;
     overflow: hidden;
+}
+
+.app-container {
+  height: 100vh !important;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.1); /* Průsvitné pozadí - čtvrté číslo určuje průhlednost */
 }
 
 #container {
@@ -59,6 +71,7 @@ button {
   border-radius: 8px;
   box-sizing: border-box;
   color: #111;
+
   cursor: pointer;
   display: flex;
   font-family: Inter,sans-serif;
@@ -76,10 +89,15 @@ button {
   touch-action: manipulation;
 }
 
+
+.buttonCointainer {
+  z-index: 9999999 !important;
+}
 button:after {
   background-color: #111;
   border-radius: 8px;
   content: "";
+
   display: block;
   height: 48px;
   left: 0;
@@ -139,11 +157,11 @@ button:hover {
 
  .modal {
   position: fixed;
-  z-index: 1;
+  z-index: 9999;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   overflow: auto;
   background-color: rgba(0,0,0,0.4);
 }
@@ -154,6 +172,10 @@ button:hover {
   padding: 20px;
   border: 1px solid #888;
   width: 30%;
+  border-radius: 40px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
   text-align: center;
 }
 
@@ -164,7 +186,7 @@ button:hover {
   text-align: center;
   font-size: 50px;    /* Velikost písma podle vašich potřeb */
   color: black;       /* Barva písma podle vašich potřeb */
-  z-index: 10;        /* Zajistí, že bude nad ostatními prvky */
+  z-index: 0;        /* Zajistí, že bude nad ostatními prvky */
   line-height: 1.2;
   right: 24%;
 }
